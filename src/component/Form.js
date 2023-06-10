@@ -7,10 +7,8 @@ const AddProductForm = () => {
   const [name, setProductName] = useState('');
   const [price, setProductPrice] = useState('');
   const [image, setImage] = useState('');
-  const [name_category, setProductCategory] = useState('');
-  const [color, setCakeColor] = useState('');
-  const [origin, setIngredient] = useState('');
-  const [expiry_date, setExpiryDate] = useState('');
+  const [brand, setProductBrand] = useState('');
+
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -21,15 +19,12 @@ const AddProductForm = () => {
       name,
       price,
       image,
-      name_category,
-      color,
-      origin,
-      expiry_date
+      brand,
     };
 
     try {
       // Send the new product data to the server or API
-      const response = await axios.post('http://localhost:3000/products', newProduct);
+      const response = await axios.post('http://127.0.0.1:8000/api/products', newProduct);
 
       // Check if the request was successful
       if (response.status === 201) {
@@ -38,13 +33,9 @@ const AddProductForm = () => {
         setProductName('');
         setProductPrice('');
         setImage('');
-        setProductCategory('');
-        setCakeColor('');
-        setIngredient('');
-        setExpiryDate('');
-
+        setProductBrand('');
         // Redirect to the home page
-        window.location.href = '/';
+        window.location.href = '/admin';
       } else {
         console.error('Failed to add product.');
       }
@@ -84,41 +75,14 @@ const AddProductForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="productCategory">Loại Sản Phẩm</label>
+        <label htmlFor="productbrand">Thương hiệu</label>
         <input
           type="text"
           id="productCategory"
-          value={name_category}
-          onChange={(e) => setProductCategory(e.target.value)}
+          value={brand}
+          onChange={(e) => setProductBrand(e.target.value)}
         />
-      </div>
-      <div>
-        <label htmlFor="cakeColor">Màu Bánh</label>
-        <input
-          type="text"
-          id="cakeColor"
-          value={color}
-          onChange={(e) => setCakeColor(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="ingredient">Xuất Xứ</label>
-        <input
-          type="text"
-          id="ingredient"
-          value={origin}
-          onChange={(e) => setIngredient(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="expiryDate">Hạn Sử Dụng</label>
-        <input
-          type="text"
-          id="expiryDate"
-          value={expiry_date}
-          onChange={(e) => setExpiryDate(e.target.value)}
-        />
-      </div>
+      </div>  
       <button type="submit">Thêm</button>
     </form>
     </div>

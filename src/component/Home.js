@@ -14,7 +14,7 @@ const Home = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/products');
+      const response = await axios.get('http://127.0.0.1:8000/api/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -27,7 +27,7 @@ const Home = () => {
   
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:3000/products/${productId}`);
+        await axios.delete(`http://127.0.0.1:8000/api/products/${productId}`);
   
         // Xóa sản phẩm khỏi danh sách
         const updatedProducts = products.filter((product) => product.id !== productId);
@@ -41,17 +41,17 @@ const Home = () => {
   return (
     <div>
       <div className="content-wrapper">
-        <Link to="/add-product">Thêm Sản Phẩm</Link>
+        <Link to="/admin/add-product">Thêm Sản Phẩm</Link>
         <div className="table-responsive">
           <table className="table table-striped table-full-width">
             <thead>
               <tr>
                 <th>STT</th>
                 <th>Tên Sản Phẩm</th>
-                <th>Loại Sản Phẩm</th>
+                <th>giá</th>
                 <th>Hình Ảnh</th>
-                <th>Xuất Xứ</th>
-                <th>Tình Trạng</th>
+                <th>brand</th>
+                <th>logo</th>
                 <th>Hành Động</th>
               </tr>
             </thead>
@@ -60,14 +60,17 @@ const Home = () => {
                 <tr key={product.id}>
                   <td>{index + 1}</td>
                   <td>{product.name}</td>
-                  <td>{product.name_category}</td>
+                  <td>{product.price}</td>
                   <td>
                     <img src={product.image} alt={product.productName} height="50" />
                   </td>
-                  <td>{product.origin}</td>
-                  <td>{product.tinhtranghang ? 'Còn hàng' : 'Hết hàng'}</td>
+                  <td>{product.brand}</td>
+                  <td>
+                  <img src={product.logo} alt={product.productName} height="50" />
+                  </td>
                   <td className="button-row">
-                    <Link to={`edit-product/${product.id}`}>Sửa</Link>
+                    <button className="btn btn-warning">
+                    <Link to={`edit-product/${product.id}`}>Sửa</Link></button>
                     <button className="btn btn-success">Xem</button>
                     <button className="btn btn-danger" onClick={() => handleDeleteProduct(product.id)}>
                       Xóa

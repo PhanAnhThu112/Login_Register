@@ -9,13 +9,7 @@ const EditProductForm = () => {
     name: '',
     price: '',
     image: '',
-    color: '',
-    name_category: '',
-    material: '',
-    expiry_date: '',
-    origin: '',
-    description: '',
-    tinhtranghang: false,
+    brand: '',
   });
 
   useEffect(() => {
@@ -24,7 +18,7 @@ const EditProductForm = () => {
 
   const fetchProduct = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/products/${id}`);
+      const response = await axios.get(`http://127.0.0.1:8000/api/products/${id}`);
       
       setProduct(response.data);
       console.log(product);
@@ -44,13 +38,13 @@ const EditProductForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/products/${id}`, product);
+      await axios.put(`http://127.0.0.1:8000/api/products/${id}`, product);
       // Gửi lại yêu cầu để lấy thông tin sản phẩm đã cập nhật
-      const response = await axios.get(`http://localhost:3000/products/${id}`);
+      const response = await axios.get(`http://127.0.0.1:8000/api/products/${id}`);
       setProduct(response.data);
       // Hoặc bạn có thể gọi hàm fetchProduct để lấy thông tin sản phẩm
       // fetchProduct();
-      window.location.href = '/';
+      window.location.href = '/admin';
     } catch (error) {
       console.error('Error updating product:', error);
     }
@@ -73,32 +67,8 @@ const EditProductForm = () => {
           <input type="text" id="image" name="image" value={product.image} onChange={handleChange} />
         </div>
         <div>
-          <label htmlFor="color">Màu Bánh:</label>
-          <input type="text" id="color" name="color" value={product.color} onChange={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="category">Tên Loại Sản Phẩm:</label>
-          <input type="text" id="category" name="name_category" value={product.name_category} onChange={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="material">Chất Liệu:</label>
-          <input type="text" id="material" name="material" value={product.material} onChange={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="expirationDate">Hạn Sử Dụng:</label>
-          <input type="text" id="expirationDate" name="expiry_date" value={product.expiry_date} onChange={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="origin">Xuất Xứ:</label>
-          <input type="text" id="origin" name="origin" value={product.origin} onChange={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="description">Mô Tả:</label>
-          <input type="text" id="description" name="description" value={product.description} onChange={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="status">Tình Trạng Hàng:</label>
-          <input type="checkbox" id="status" name="tinhtranghang" checked={product.tinhtranghang} onChange={handleChange} />
+          <label htmlFor="color">Thương Hiệu</label>
+          <input type="text" id="brand" name="brand" value={product.brand} onChange={handleChange} />
         </div>
         <button type="submit">Cập Nhật</button>
       </form>

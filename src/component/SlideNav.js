@@ -8,7 +8,7 @@ const SlideNav = () => {
   {/* Brand Logo */}
   <a href="index3.html" className="brand-link">
     <img src="https://png.pngtree.com/png-vector/20210123/ourlarge/pngtree-cartoon-bakery-clipart-png-image_2778769.jpg" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{opacity: '.8'}} />
-    <span className="brand-text font-weight-light">Shop Bakery</span>
+    <span className="brand-text font-weight-light">TIKI SHOP</span>
   </a>
   {/* Sidebar */}
   <div className="sidebar">
@@ -18,7 +18,7 @@ const SlideNav = () => {
         <img src="https://nhadepso.com/wp-content/uploads/2023/02/bo-suu-tap-50-hinh-anrh-cho-poodle-cute-de-thuong-dep-nhat_1.jpg" className="img-circle elevation-2" alt="User Image" />
       </div>
       <div className="info">
-        <a href="#" className="d-block">Thư Péo</a>
+        <a href="#" className="d-block">Biên Nguyễn</a>
       </div>
     </div>
     {/* SidebarSearch Form */}
