@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import bcrypt from 'bcryptjs';
 import './Login.css';
+import UserContext from './UserContext';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { setLoggedInUser } = useContext(UserContext); // Get the setLoggedInUser function from UserContext
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -16,11 +18,12 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleLoginSuccess = () => {
+  const handleLoginSuccess = (username) => {
     // Handle successful login here
     console.log('Đăng nhập thành công');
-    // Additional handling (e.g., save login state, etc.)
+    setLoggedInUser(username);
     window.location.href = '/'; // Redirect to the homepage
+     // Set logged-in user in the context
   };
 
   const handleSubmit = async (e) => {
@@ -36,7 +39,7 @@ function Login() {
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (isPasswordValid) {
           // Successful login
-          handleLoginSuccess();
+          handleLoginSuccess(user.username);
         } else {
           setError('Tên đăng nhập hoặc mật khẩu không đúng');
         }

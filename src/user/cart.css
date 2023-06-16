@@ -1,0 +1,107 @@
+.cart-container {
+    margin: 20px;
+  }
+  
+  .cart-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .table td img {
+    max-width: 50px;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-btn {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .quantity-btn:hover {
+    background-color: #ccc;
+  }
+  
+  .quantity-value {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+  }
+  
+  .btn-success {
+    color: #fff;
+    background-color: #28a745;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .mt-3 {
+    margin-top: 15px;
+  }
+  
+  .total-price {
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
