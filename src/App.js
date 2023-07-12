@@ -13,8 +13,13 @@
   import EditProductForm from './component/EditProductForm';
   import Login from './user/Login';
   import './App.css';
+  import Payment from './user/Payment';
   import Register from './user/register';
   import Cart from './user/cart';
+  import ForgotPassword from './user/ForgotPassword';
+  import ResetPassword from './user/ResetPassword';
+  import OtpVerification from './user/OtpVerification';
+ 
 
   function App() {
     return (
@@ -26,6 +31,10 @@
               <Route path="/admin/*" element={<PageAdmin />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/forgotpassword" element={<ForgotPassword />} />
+              <Route path="/resetpassword" element={<ResetPassword />} />
+              <Route path="/verification" element={<OtpVerification />} />
+              <Route path="/payment" element={<Payment />} />
               <Route path="/register" element={<Register />} />
             </Routes>
           </Router>

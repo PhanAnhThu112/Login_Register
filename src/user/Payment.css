@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product-details {
+    flex: 1;
+  }
+  
+  .payment-form {
+    flex: 1;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .table th {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .table td {
+    text-align: center;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product-details,
+  .payment-form {
+    flex: 1;
+    width: 50%;
+  }
+  
+  /* CSS tiếp theo của bạn */
+    

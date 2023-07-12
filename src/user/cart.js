@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from './CartContext';
 import './cart.css';
 
+
 function Cart() {
   const { cartItems, removeFromCart } = useContext(CartContext);
   const [cartProducts, setCartProducts] = useState([]);
@@ -81,7 +82,7 @@ function Cart() {
   };
 
   const handleProceedToPayment = () => {
-    // Add logic to handle proceeding to payment
+    window.location.href = 'http://localhost:3000/payment'
   };
 
   const handleViewDetails = (productId) => {
@@ -141,10 +142,10 @@ function Cart() {
         </table>
       )}
       <div style={{ marginLeft: 700 }}>Total Price: {totalPrice}</div>
-      <br /><br /><br />
-      <div className="mt-3" style={{ marginLeft: 200 }}>
+      <br /><br />
+      <div className="mt-3" style={{ marginLeft: 700 }}>
         <button className="btn btn-success" onClick={handleProceedToPayment}>
-          Proceed to Payment
+          Payment
         </button>
       </div>
     </div>

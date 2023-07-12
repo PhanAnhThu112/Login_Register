@@ -100,7 +100,7 @@ function Register() {
             onChange={handleConfirmPasswordChange}
           />
         </div>
-        <button type="submit" className="login-button">
+        <button type="submit" className="login-button2">
           Đăng ký
         </button>
       </form>

@@ -5,6 +5,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+
+
 function ProductList() {
   const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
@@ -47,10 +49,13 @@ function ProductList() {
   const settings = {
     dots: true,
     infinite: true,
+    // autoplay: true,
+    // autoplaySpeed: 1000,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
+    
     centerPadding: '100px',
     responsive: [
       {
@@ -71,7 +76,7 @@ function ProductList() {
       }
     ]
   };
-
+  
   return (
     <div>
       <h1 className="title" style={{ marginLeft: 400 }}>
@@ -103,6 +108,7 @@ function ProductList() {
           </div>
         ))}
       </Slider>
+     
     </div>
   );
 }

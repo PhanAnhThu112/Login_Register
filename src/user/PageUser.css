@@ -137,3 +137,48 @@
 .slick-next {
   right: 10px;
 }
+
+
+.slideshow {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.slide {
+  display: flex;
+  gap: 70px;
+  animation: slideAnimation 20s linear infinite;
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.col-md-1 {
+  flex: 0 0 auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.card {
+  max-height: 10000px;
+  overflow: hidden;
+}
+
+.card-text1 {
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 15px;
+  color: black;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 55px;
+  white-space: normal;
+  text-align: center;
+}

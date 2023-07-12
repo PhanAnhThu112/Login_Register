@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import bcrypt from 'bcryptjs';
 import './Login.css';
+import { Link } from 'react-router-dom';
 import UserContext from './UserContext';
 
 function Login() {
@@ -75,7 +76,9 @@ function Login() {
             onChange={handlePasswordChange}
           />
         </div>
-        <button type="submit" className="login-button">
+        <a className='forgot'><Link to='/forgotpassword'>Forgot Password? </Link></a>
+        <br/>
+        <button type="submit" className="login-button1">
           Đăng nhập
         </button>
       </form>

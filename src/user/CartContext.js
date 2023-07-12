@@ -16,7 +16,6 @@ export const CartProvider = (props) => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  
   const addToCart = (product) => {
     setCartItems(prevCartItems => [...prevCartItems, product]);
   };

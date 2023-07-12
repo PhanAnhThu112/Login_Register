@@ -1,5 +1,5 @@
 .login-container {
-    width: 750px;
+    width: 400px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -12,6 +12,8 @@
   }
   
   .form-group {
+    width:100px;
+    /* padding-left: 30px; */
     margin-bottom: 15px;
   }
   
@@ -22,7 +24,7 @@
   }
   
   .form-group input {
-    width: 100%;
+    width: 200px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -32,10 +34,13 @@
     color: red;
     margin-bottom: 10px;
   }
-  
+  .login-button1{
+    margin-left:100px
+  }
   .login-button {
-    width: 100%;
-    padding: 10px;
+    width: 200px;
+    /* position: absolute; */
+    margin-right: 1000px;
     background-color: #3498db;
     border: none;
     border-radius: 5px;
